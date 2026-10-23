@@ -1,9 +1,9 @@
+```html
 <!DOCTYPE html>
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Roblox Studio Dersleri</title>
 
 <style>
@@ -15,122 +15,207 @@
 
 body {
     font-family: Arial, sans-serif;
-    background: #0b0b0f;
+    background: #08080c;
     color: white;
 }
 
 header {
-    background: #111118;
-    padding: 20px;
-    text-align: center;
-    border-bottom: 1px solid #292933;
-}
-
-header h1 {
-    font-size: 32px;
-}
-
-header p {
-    color: #aaa;
-    margin-top: 8px;
-}
-
-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10,10,15,0.95);
+    border-bottom: 1px solid #252530;
+    padding: 18px 7%;
     display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-    padding: 15px;
-    background: #15151d;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #00aaff;
 }
 
 nav a {
-    color: white;
+    color: #ccc;
     text-decoration: none;
-    padding: 10px 18px;
-    border-radius: 8px;
-    background: #242431;
+    margin-left: 25px;
 }
 
 nav a:hover {
-    background: #3a3a4c;
+    color: #00aaff;
 }
 
 .hero {
     text-align: center;
-    padding: 70px 20px;
+    padding: 90px 20px 70px;
+    background:
+        radial-gradient(circle at center, #12304a 0%, #08080c 55%);
 }
 
-.hero h2 {
-    font-size: 42px;
-    margin-bottom: 15px;
+.hero h1 {
+    font-size: 52px;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #00aaff;
 }
 
 .hero p {
     color: #aaa;
-    font-size: 18px;
+    font-size: 19px;
+    max-width: 650px;
+    margin: auto;
+    line-height: 1.6;
+}
+
+.search {
+    margin: 30px auto 0;
+    max-width: 600px;
+}
+
+.search input {
+    width: 100%;
+    padding: 17px 20px;
+    border-radius: 12px;
+    border: 1px solid #33333e;
+    background: #15151d;
+    color: white;
+    font-size: 16px;
+    outline: none;
+}
+
+.search input:focus {
+    border-color: #00aaff;
 }
 
 .container {
-    max-width: 1100px;
+    max-width: 1150px;
     margin: auto;
-    padding: 30px 20px;
+    padding: 55px 20px;
 }
 
 .section-title {
-    margin-bottom: 20px;
-    font-size: 28px;
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.category {
+    background: #171720;
+    border: 1px solid #2c2c38;
+    color: #ddd;
+    padding: 10px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.category:hover {
+    border-color: #00aaff;
+    color: #00aaff;
 }
 
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
 }
 
 .card {
-    background: #16161e;
-    border: 1px solid #292933;
+    background: #13131a;
+    border: 1px solid #292934;
+    border-radius: 17px;
     padding: 25px;
-    border-radius: 15px;
-    transition: 0.2s;
+    transition: 0.25s;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    border-color: #555;
+    transform: translateY(-6px);
+    border-color: #00aaff;
+}
+
+.icon {
+    font-size: 35px;
+    margin-bottom: 15px;
 }
 
 .card h3 {
+    font-size: 21px;
     margin-bottom: 10px;
 }
 
 .card p {
-    color: #aaa;
+    color: #999;
     line-height: 1.5;
+    min-height: 70px;
 }
 
-button {
-    margin-top: 15px;
+.card button {
+    margin-top: 18px;
+    width: 100%;
+    padding: 12px;
     border: none;
-    padding: 10px 15px;
-    border-radius: 8px;
-    background: #ffffff;
-    color: #111;
-    cursor: pointer;
+    border-radius: 9px;
+    background: #00aaff;
+    color: white;
     font-weight: bold;
+    cursor: pointer;
 }
 
-button:hover {
-    background: #ddd;
+.card button:hover {
+    background: #008bd1;
+}
+
+.info {
+    margin-top: 60px;
+    background: #111820;
+    border: 1px solid #21465d;
+    border-radius: 18px;
+    padding: 35px;
+}
+
+.info h2 {
+    margin-bottom: 15px;
+}
+
+.info p {
+    color: #aaa;
+    line-height: 1.7;
 }
 
 footer {
-    margin-top: 50px;
-    padding: 30px;
     text-align: center;
-    background: #111118;
-    color: #888;
+    padding: 35px;
+    background: #0d0d12;
+    border-top: 1px solid #22222c;
+    color: #777;
+}
+
+@media(max-width:700px) {
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav a {
+        margin: 0 7px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
 }
 </style>
 </head>
@@ -138,81 +223,273 @@ footer {
 <body>
 
 <header>
-    <h1>🎮 Roblox Studio Dersleri</h1>
-    <p>Roblox Studio öğrenme platformu</p>
+
+    <div class="logo">
+        🎮 <span>Roblox</span> Studio Dersleri
+    </div>
+
+    <nav>
+        <a href="#dersler">Dersler</a>
+        <a href="#hakkinda">Hakkında</a>
+    </nav>
+
 </header>
 
-<nav>
-    <a href="#dersler">Dersler</a>
-    <a href="#script">Script</a>
-    <a href="#gui">GUI</a>
-    <a href="#modeller">Modeller</a>
-</nav>
-
 <section class="hero">
-    <h2>Roblox Studio Öğren! 🚀</h2>
-    <p>Sıfırdan başlayıp kendi Roblox projelerini geliştirmeyi öğren.</p>
+
+    <h1>
+        Roblox Studio <span>Öğren!</span> 🚀
+    </h1>
+
+    <p>
+        Hiçbir şey bilmeden başlayıp kendi Roblox oyunlarını
+        geliştirmeyi öğren. Script, GUI, modelleme ve daha fazlası.
+    </p>
+
+    <div class="search">
+        <input
+            type="text"
+            id="search"
+            placeholder="🔍 Ders ara... Örn: GUI, Script, araba"
+            onkeyup="searchLessons()"
+        >
+    </div>
+
 </section>
 
-<div class="container">
+<div class="container" id="dersler">
 
-    <h2 id="dersler" class="section-title">
-        📚 Dersler
-    </h2>
+    <h2 class="section-title">📚 Ders Kategorileri</h2>
+
+    <div class="categories">
+
+        <button class="category" onclick="filterLessons('all')">
+            Tümü
+        </button>
+
+        <button class="category" onclick="filterLessons('baslangic')">
+            🟢 Başlangıç
+        </button>
+
+        <button class="category" onclick="filterLessons('script')">
+            💻 Script
+        </button>
+
+        <button class="category" onclick="filterLessons('gui')">
+            🖥️ GUI
+        </button>
+
+        <button class="category" onclick="filterLessons('build')">
+            🧱 Build
+        </button>
+
+    </div>
 
     <div class="cards">
 
-        <div class="card">
-            <h3>🟢 Başlangıç</h3>
+        <div class="card lesson baslangic">
+
+            <div class="icon">🟢</div>
+
+            <h3>Roblox Studio'ya Başlangıç</h3>
+
             <p>
-                Roblox Studio nedir?
+                Roblox Studio'yu tanı.
                 Explorer, Properties ve temel araçları öğren.
             </p>
-            <button onclick="alert('Başlangıç dersi yakında!')">
-                Derse Git
+
+            <button onclick="startLesson('Başlangıç Dersi')">
+                Derse Başla →
             </button>
+
         </div>
 
-        <div class="card" id="script">
-            <h3>💻 Lua Script</h3>
+
+        <div class="card lesson script">
+
+            <div class="icon">💻</div>
+
+            <h3>İlk Scriptini Yaz</h3>
+
             <p>
-                Roblox'ta script yazmayı,
-                değişkenleri ve fonksiyonları öğren.
+                Lua nedir? Değişkenler, fonksiyonlar
+                ve Roblox script sisteminin temellerini öğren.
             </p>
-            <button onclick="alert('Script dersi yakında!')">
-                Derse Git
+
+            <button onclick="startLesson('Script Dersi')">
+                Derse Başla →
             </button>
+
         </div>
 
-        <div class="card" id="gui">
-            <h3>🖥️ GUI Yapımı</h3>
+
+        <div class="card lesson gui">
+
+            <div class="icon">🖥️</div>
+
+            <h3>Modern GUI Yapımı</h3>
+
             <p>
-                Modern butonlar, menüler ve
-                oyuncu arayüzleri oluştur.
+                Buton, Frame, TextLabel ve modern
+                Roblox arayüzleri oluşturmayı öğren.
             </p>
-            <button onclick="alert('GUI dersi yakında!')">
-                Derse Git
+
+            <button onclick="startLesson('GUI Dersi')">
+                Derse Başla →
             </button>
+
         </div>
 
-        <div class="card" id="modeller">
-            <h3>🧱 Modelleme</h3>
+
+        <div class="card lesson build">
+
+            <div class="icon">🧱</div>
+
+            <h3>Harita Yapımı</h3>
+
             <p>
-                Part, Model ve Mesh kullanarak
-                oyununa objeler eklemeyi öğren.
+                Part kullanarak yollar, binalar,
+                odalar ve oyun haritaları oluştur.
             </p>
-            <button onclick="alert('Modelleme dersi yakında!')">
-                Derse Git
+
+            <button onclick="startLesson('Build Dersi')">
+                Derse Başla →
             </button>
+
         </div>
+
+
+        <div class="card lesson script">
+
+            <div class="icon">🚗</div>
+
+            <h3>Araba Sistemi</h3>
+
+            <p>
+                Roblox oyununa araba eklemeyi
+                ve temel araç sistemlerini öğren.
+            </p>
+
+            <button onclick="startLesson('Araba Dersi')">
+                Derse Başla →
+            </button>
+
+        </div>
+
+
+        <div class="card lesson script">
+
+            <div class="icon">💰</div>
+
+            <h3>Para Sistemi</h3>
+
+            <p>
+                Oyunculara para verme, para harcama
+                ve leaderboard sistemi oluştur.
+            </p>
+
+            <button onclick="startLesson('Para Sistemi')">
+                Derse Başla →
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="info" id="hakkinda">
+
+        <h2>🎓 Bu site ne işe yarıyor?</h2>
+
+        <p>
+            Roblox Studio Dersleri, Roblox Studio öğrenmek isteyen
+            kişiler için hazırlanmış bir eğitim platformudur.
+            Başlangıç seviyesinden başlayarak script, GUI,
+            modelleme ve oyun sistemlerine kadar ilerleyebilirsin.
+        </p>
 
     </div>
 
 </div>
 
+
 <footer>
+
     © 2026 Roblox Studio Dersleri
+    <br><br>
+    Öğren • Geliştir • Paylaş 🚀
+
 </footer>
+
+
+<script>
+
+function startLesson(name) {
+
+    alert(
+        "📚 " + name +
+        "\\n\\nBu dersin içeriğini bir sonraki aşamada ekleyeceğiz!"
+    );
+
+}
+
+
+function searchLessons() {
+
+    let input =
+        document.getElementById("search")
+        .value
+        .toLowerCase();
+
+    let lessons =
+        document.querySelectorAll(".lesson");
+
+    lessons.forEach(function(lesson) {
+
+        let text =
+            lesson.innerText.toLowerCase();
+
+        if (text.includes(input)) {
+
+            lesson.style.display = "block";
+
+        } else {
+
+            lesson.style.display = "none";
+
+        }
+
+    });
+
+}
+
+
+function filterLessons(category) {
+
+    let lessons =
+        document.querySelectorAll(".lesson");
+
+    lessons.forEach(function(lesson) {
+
+        if (
+            category === "all" ||
+            lesson.classList.contains(category)
+        ) {
+
+            lesson.style.display = "block";
+
+        } else {
+
+            lesson.style.display = "none";
+
+        }
+
+    });
+
+}
+
+</script>
 
 </body>
 </html>
+```
