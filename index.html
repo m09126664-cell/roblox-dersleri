@@ -4,458 +4,1275 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Roblox Studio Dersleri</title>
 
 <style>
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background: #08080c;
-    color: white;
+html{
+    scroll-behavior:smooth;
 }
 
-header {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: rgba(10,10,15,0.95);
-    border-bottom: 1px solid #252530;
-    padding: 18px 7%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#07080c;
+    color:#fff;
 }
 
-.logo {
-    font-size: 23px;
-    font-weight: bold;
+/* HEADER */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(8,9,14,.95);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid #242731;
+    padding:16px 6%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
 
-.logo span {
-    color: #00aaff;
+.logo{
+    font-size:21px;
+    font-weight:800;
 }
 
-nav a {
-    color: #ccc;
-    text-decoration: none;
-    margin-left: 25px;
+.logo span{
+    color:#00aaff;
 }
 
-nav a:hover {
-    color: #00aaff;
+nav{
+    display:flex;
+    gap:22px;
 }
 
-.hero {
-    text-align: center;
-    padding: 90px 20px 70px;
+nav a{
+    color:#aaa;
+    text-decoration:none;
+    font-size:14px;
+}
+
+nav a:hover{
+    color:#00aaff;
+}
+
+/* HERO */
+
+.hero{
+    text-align:center;
+    padding:85px 20px 65px;
     background:
-        radial-gradient(circle at center, #12304a 0%, #08080c 55%);
+    radial-gradient(circle at 50% 0%,#12324b 0%,#07080c 55%);
 }
 
-.hero h1 {
-    font-size: 52px;
-    margin-bottom: 20px;
+.hero h1{
+    font-size:52px;
+    margin-bottom:18px;
 }
 
-.hero h1 span {
-    color: #00aaff;
+.hero h1 span{
+    color:#00aaff;
 }
 
-.hero p {
-    color: #aaa;
-    font-size: 19px;
-    max-width: 650px;
-    margin: auto;
-    line-height: 1.6;
+.hero p{
+    max-width:700px;
+    margin:auto;
+    color:#a8adb8;
+    font-size:18px;
+    line-height:1.7;
 }
 
-.search {
-    margin: 30px auto 0;
-    max-width: 600px;
+/* SEARCH */
+
+.search{
+    max-width:650px;
+    margin:30px auto 0;
 }
 
-.search input {
-    width: 100%;
-    padding: 17px 20px;
-    border-radius: 12px;
-    border: 1px solid #33333e;
-    background: #15151d;
-    color: white;
-    font-size: 16px;
-    outline: none;
+.search input{
+    width:100%;
+    padding:17px 20px;
+    background:#11141b;
+    color:white;
+    border:1px solid #303541;
+    border-radius:12px;
+    outline:none;
+    font-size:16px;
 }
 
-.search input:focus {
-    border-color: #00aaff;
+.search input:focus{
+    border-color:#00aaff;
 }
 
-.container {
-    max-width: 1150px;
-    margin: auto;
-    padding: 55px 20px;
+/* CONTAINER */
+
+.container{
+    max-width:1150px;
+    margin:auto;
+    padding:55px 20px;
 }
 
-.section-title {
-    font-size: 30px;
-    margin-bottom: 25px;
+.section-title{
+    font-size:30px;
+    margin-bottom:24px;
 }
 
-.categories {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 40px;
+/* CATEGORIES */
+
+.categories{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:35px;
 }
 
-.category {
-    background: #171720;
-    border: 1px solid #2c2c38;
-    color: #ddd;
-    padding: 10px 16px;
-    border-radius: 20px;
-    cursor: pointer;
+.category{
+    border:1px solid #303541;
+    background:#11141b;
+    color:#ddd;
+    padding:10px 16px;
+    border-radius:20px;
+    cursor:pointer;
 }
 
-.category:hover {
-    border-color: #00aaff;
-    color: #00aaff;
+.category:hover{
+    border-color:#00aaff;
+    color:#00aaff;
 }
 
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+/* CARDS */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
 }
 
-.card {
-    background: #13131a;
-    border: 1px solid #292934;
-    border-radius: 17px;
-    padding: 25px;
-    transition: 0.25s;
+.card{
+    background:#101219;
+    border:1px solid #272b35;
+    border-radius:17px;
+    padding:24px;
+    transition:.2s;
 }
 
-.card:hover {
-    transform: translateY(-6px);
-    border-color: #00aaff;
+.card:hover{
+    transform:translateY(-5px);
+    border-color:#00aaff;
 }
 
-.icon {
-    font-size: 35px;
-    margin-bottom: 15px;
+.icon{
+    font-size:38px;
+    margin-bottom:15px;
 }
 
-.card h3 {
-    font-size: 21px;
-    margin-bottom: 10px;
+.card h3{
+    margin-bottom:10px;
+    font-size:20px;
 }
 
-.card p {
-    color: #999;
-    line-height: 1.5;
-    min-height: 70px;
+.card p{
+    color:#969ca8;
+    line-height:1.6;
+    min-height:75px;
 }
 
-.card button {
-    margin-top: 18px;
-    width: 100%;
-    padding: 12px;
-    border: none;
-    border-radius: 9px;
-    background: #00aaff;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
+.card button{
+    width:100%;
+    margin-top:18px;
+    padding:12px;
+    border:0;
+    border-radius:9px;
+    background:#00aaff;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
 }
 
-.card button:hover {
-    background: #008bd1;
+.card button:hover{
+    background:#008bd1;
 }
 
-.info {
-    margin-top: 60px;
-    background: #111820;
-    border: 1px solid #21465d;
-    border-radius: 18px;
-    padding: 35px;
+/* PROGRESS */
+
+.progress-box{
+    margin-top:50px;
+    background:#101219;
+    border:1px solid #272b35;
+    padding:25px;
+    border-radius:17px;
 }
 
-.info h2 {
-    margin-bottom: 15px;
+.progress-bar{
+    height:12px;
+    background:#272b35;
+    border-radius:20px;
+    overflow:hidden;
+    margin-top:15px;
 }
 
-.info p {
-    color: #aaa;
-    line-height: 1.7;
+.progress-fill{
+    height:100%;
+    width:0%;
+    background:#00aaff;
+    transition:.4s;
 }
 
-footer {
-    text-align: center;
-    padding: 35px;
-    background: #0d0d12;
-    border-top: 1px solid #22222c;
-    color: #777;
+/* ABOUT */
+
+.about{
+    margin-top:50px;
+    padding:35px;
+    border-radius:17px;
+    background:#101820;
+    border:1px solid #21475e;
 }
 
-@media(max-width:700px) {
+.about p{
+    margin-top:12px;
+    color:#a8adb8;
+    line-height:1.7;
+}
 
-    header {
-        flex-direction: column;
-        gap: 15px;
+/* LESSON PAGE */
+
+.lesson-page{
+    display:none;
+    min-height:100vh;
+    background:#07080c;
+}
+
+.lesson-content{
+    max-width:900px;
+    margin:auto;
+    padding:40px 20px 80px;
+}
+
+.back{
+    padding:11px 17px;
+    border:0;
+    border-radius:8px;
+    cursor:pointer;
+    background:#fff;
+    color:#111;
+    font-weight:bold;
+    margin-bottom:30px;
+}
+
+.lesson-content h1{
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+.lesson-content h2{
+    margin-top:35px;
+    margin-bottom:12px;
+}
+
+.lesson-content p,
+.lesson-content li{
+    color:#a8adb8;
+    line-height:1.8;
+}
+
+.lesson-content ul{
+    padding-left:25px;
+}
+
+.code-box{
+    position:relative;
+    margin-top:15px;
+}
+
+pre{
+    background:#0e1720;
+    border:1px solid #25455b;
+    color:#8bd7ff;
+    padding:20px;
+    border-radius:12px;
+    overflow:auto;
+    line-height:1.6;
+}
+
+.copy{
+    margin-top:10px;
+    padding:11px 17px;
+    border:0;
+    border-radius:8px;
+    background:#00aaff;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.complete{
+    margin-top:40px;
+    width:100%;
+    padding:15px;
+    border:0;
+    border-radius:10px;
+    background:#00aaff;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:35px;
+    color:#777;
+    border-top:1px solid #222631;
+}
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+    header{
+        flex-direction:column;
+        gap:15px;
     }
 
-    nav a {
-        margin: 0 7px;
+    nav{
+        gap:12px;
     }
 
-    .hero h1 {
-        font-size: 36px;
+    .hero h1{
+        font-size:36px;
     }
+
+    .hero p{
+        font-size:16px;
+    }
+
 }
+
 </style>
 </head>
 
 <body>
 
+<!-- ANA SAYFA -->
+
+<div id="home">
+
 <header>
 
-    <div class="logo">
-        🎮 <span>Roblox</span> Studio Dersleri
-    </div>
+<div class="logo">
+🎮 <span>Roblox</span> Studio Dersleri
+</div>
 
-    <nav>
-        <a href="#dersler">Dersler</a>
-        <a href="#hakkinda">Hakkında</a>
-    </nav>
+<nav>
+<a href="#dersler">Dersler</a>
+<a href="#hakkinda">Hakkında</a>
+</nav>
 
 </header>
 
 <section class="hero">
 
-    <h1>
-        Roblox Studio <span>Öğren!</span> 🚀
-    </h1>
+<h1>
+Roblox Studio <span>Öğren!</span> 🚀
+</h1>
 
-    <p>
-        Hiçbir şey bilmeden başlayıp kendi Roblox oyunlarını
-        geliştirmeyi öğren. Script, GUI, modelleme ve daha fazlası.
-    </p>
+<p>
+Hiçbir şey bilmeden başlayıp Roblox Studio'da
+kendi oyunlarını geliştirmeyi öğren.
+</p>
 
-    <div class="search">
-        <input
-            type="text"
-            id="search"
-            placeholder="🔍 Ders ara... Örn: GUI, Script, araba"
-            onkeyup="searchLessons()"
-        >
-    </div>
+<div class="search">
+
+<input
+id="search"
+type="text"
+placeholder="🔍 Ders ara..."
+onkeyup="searchLessons()">
+
+</div>
 
 </section>
 
 <div class="container" id="dersler">
 
-    <h2 class="section-title">📚 Ders Kategorileri</h2>
+<h2 class="section-title">📚 Dersler</h2>
 
-    <div class="categories">
+<div class="categories">
 
-        <button class="category" onclick="filterLessons('all')">
-            Tümü
-        </button>
+<button class="category" onclick="filterLessons('all')">
+Tümü
+</button>
 
-        <button class="category" onclick="filterLessons('baslangic')">
-            🟢 Başlangıç
-        </button>
+<button class="category" onclick="filterLessons('baslangic')">
+🟢 Başlangıç
+</button>
 
-        <button class="category" onclick="filterLessons('script')">
-            💻 Script
-        </button>
+<button class="category" onclick="filterLessons('script')">
+💻 Script
+</button>
 
-        <button class="category" onclick="filterLessons('gui')">
-            🖥️ GUI
-        </button>
+<button class="category" onclick="filterLessons('gui')">
+🖥️ GUI
+</button>
 
-        <button class="category" onclick="filterLessons('build')">
-            🧱 Build
-        </button>
+<button class="category" onclick="filterLessons('build')">
+🧱 Build
+</button>
 
-    </div>
+</div>
 
-    <div class="cards">
+<div class="cards">
 
-        <div class="card lesson baslangic">
+<!-- 1 -->
 
-            <div class="icon">🟢</div>
+<div class="card lesson baslangic">
 
-            <h3>Roblox Studio'ya Başlangıç</h3>
+<div class="icon">🟢</div>
 
-            <p>
-                Roblox Studio'yu tanı.
-                Explorer, Properties ve temel araçları öğren.
-            </p>
+<h3>Roblox Studio'ya Başlangıç</h3>
 
-            <button onclick="startLesson('Başlangıç Dersi')">
-                Derse Başla →
-            </button>
+<p>
+Studio arayüzünü, Explorer'ı, Properties'i
+ve temel araçları öğren.
+</p>
 
-        </div>
+<button onclick="openLesson(1)">
+Derse Başla →
+</button>
 
+</div>
 
-        <div class="card lesson script">
+<!-- 2 -->
 
-            <div class="icon">💻</div>
+<div class="card lesson script">
 
-            <h3>İlk Scriptini Yaz</h3>
+<div class="icon">💻</div>
 
-            <p>
-                Lua nedir? Değişkenler, fonksiyonlar
-                ve Roblox script sisteminin temellerini öğren.
-            </p>
+<h3>İlk Scriptini Yaz</h3>
 
-            <button onclick="startLesson('Script Dersi')">
-                Derse Başla →
-            </button>
+<p>
+Lua'nın temellerini öğren ve ilk Roblox
+scriptini oluştur.
+</p>
 
-        </div>
+<button onclick="openLesson(2)">
+Derse Başla →
+</button>
 
+</div>
 
-        <div class="card lesson gui">
+<!-- 3 -->
 
-            <div class="icon">🖥️</div>
+<div class="card lesson script">
 
-            <h3>Modern GUI Yapımı</h3>
+<div class="icon">📦</div>
 
-            <p>
-                Buton, Frame, TextLabel ve modern
-                Roblox arayüzleri oluşturmayı öğren.
-            </p>
+<h3>Değişkenler</h3>
 
-            <button onclick="startLesson('GUI Dersi')">
-                Derse Başla →
-            </button>
+<p>
+Roblox Lua'da değişken oluşturmayı
+ve değer saklamayı öğren.
+</p>
 
-        </div>
+<button onclick="openLesson(3)">
+Derse Başla →
+</button>
 
+</div>
 
-        <div class="card lesson build">
+<!-- 4 -->
 
-            <div class="icon">🧱</div>
+<div class="card lesson gui">
 
-            <h3>Harita Yapımı</h3>
+<div class="icon">🖥️</div>
 
-            <p>
-                Part kullanarak yollar, binalar,
-                odalar ve oyun haritaları oluştur.
-            </p>
+<h3>Modern GUI</h3>
 
-            <button onclick="startLesson('Build Dersi')">
-                Derse Başla →
-            </button>
+<p>
+Frame, TextLabel ve TextButton kullanarak
+arayüz oluştur.
+</p>
 
-        </div>
+<button onclick="openLesson(4)">
+Derse Başla →
+</button>
 
+</div>
 
-        <div class="card lesson script">
+<!-- 5 -->
 
-            <div class="icon">🚗</div>
+<div class="card lesson build">
 
-            <h3>Araba Sistemi</h3>
+<div class="icon">🧱</div>
 
-            <p>
-                Roblox oyununa araba eklemeyi
-                ve temel araç sistemlerini öğren.
-            </p>
+<h3>Build Öğren</h3>
 
-            <button onclick="startLesson('Araba Dersi')">
-                Derse Başla →
-            </button>
+<p>
+Part kullanarak yollar, binalar ve
+haritalar oluştur.
+</p>
 
-        </div>
+<button onclick="openLesson(5)">
+Derse Başla →
+</button>
 
+</div>
 
-        <div class="card lesson script">
+<!-- 6 -->
 
-            <div class="icon">💰</div>
+<div class="card lesson script">
 
-            <h3>Para Sistemi</h3>
+<div class="icon">🚗</div>
 
-            <p>
-                Oyunculara para verme, para harcama
-                ve leaderboard sistemi oluştur.
-            </p>
+<h3>Araba Sistemi</h3>
 
-            <button onclick="startLesson('Para Sistemi')">
-                Derse Başla →
-            </button>
+<p>
+Oyuna temel bir araba sistemi
+eklemeyi öğren.
+</p>
 
-        </div>
+<button onclick="openLesson(6)">
+Derse Başla →
+</button>
 
-    </div>
+</div>
 
+<!-- 7 -->
 
-    <div class="info" id="hakkinda">
+<div class="card lesson script">
 
-        <h2>🎓 Bu site ne işe yarıyor?</h2>
+<div class="icon">💰</div>
 
-        <p>
-            Roblox Studio Dersleri, Roblox Studio öğrenmek isteyen
-            kişiler için hazırlanmış bir eğitim platformudur.
-            Başlangıç seviyesinden başlayarak script, GUI,
-            modelleme ve oyun sistemlerine kadar ilerleyebilirsin.
-        </p>
+<h3>Para Sistemi</h3>
 
-    </div>
+<p>
+Oyunculara para verme ve
+leaderstats kullanmayı öğren.
+</p>
+
+<button onclick="openLesson(7)">
+Derse Başla →
+</button>
+
+</div>
+
+<!-- 8 -->
+
+<div class="card lesson script">
+
+<div class="icon">🏆</div>
+
+<h3>Leaderboard</h3>
+
+<p>
+Oyuncuların skorlarını
+leaderboard üzerinde göster.
+</p>
+
+<button onclick="openLesson(8)">
+Derse Başla →
+</button>
+
+</div>
+
+<!-- 9 -->
+
+<div class="card lesson script">
+
+<div class="icon">🚩</div>
+
+<h3>Checkpoint</h3>
+
+<p>
+Obby oyunlarında checkpoint
+sistemi oluştur.
+</p>
+
+<button onclick="openLesson(9)">
+Derse Başla →
+</button>
+
+</div>
+
+<!-- 10 -->
+
+<div class="card lesson script">
+
+<div class="icon">👾</div>
+
+<h3>NPC Sistemi</h3>
+
+<p>
+Oyuna NPC eklemeyi ve temel
+NPC davranışlarını öğren.
+</p>
+
+<button onclick="openLesson(10)">
+Derse Başla →
+</button>
+
+</div>
+
+<!-- 11 -->
+
+<div class="card lesson gui">
+
+<div class="icon">🛒</div>
+
+<h3>Shop GUI</h3>
+
+<p>
+Oyuncuların eşya satın
+alabileceği shop sistemi yap.
+</p>
+
+<button onclick="openLesson(11)">
+Derse Başla →
+</button>
+
+</div>
+
+<!-- 12 -->
+
+<div class="card lesson script">
+
+<div class="icon">🎒</div>
+
+<h3>Tool Sistemi</h3>
+
+<p>
+Oyuncunun eline alabileceği
+Tool oluşturmayı öğren.
+</p>
+
+<button onclick="openLesson(12)">
+Derse Başla →
+</button>
+
+</div>
+
+</div>
+
+<div class="progress-box">
+
+<h2>📊 Ders İlerlemen</h2>
+
+<p id="progressText">
+0 / 12 ders tamamlandı
+</p>
+
+<div class="progress-bar">
+
+<div
+id="progressFill"
+class="progress-fill">
+</div>
+
+</div>
+
+</div>
+
+<div class="about" id="hakkinda">
+
+<h2>🎓 Roblox Studio Dersleri</h2>
+
+<p>
+Bu site Roblox Studio öğrenmek isteyen
+başlangıç seviyesindeki geliştiriciler için
+hazırlanmıştır.
+</p>
+
+<p>
+Script, GUI, Build ve oyun sistemlerini
+adım adım öğrenebilirsin.
+</p>
+
+</div>
+
+</div>
+
+<footer>
+
+© 2026 Roblox Studio Dersleri 🚀
+
+</footer>
 
 </div>
 
 
-<footer>
+<!-- DERS SAYFASI -->
 
-    © 2026 Roblox Studio Dersleri
-    <br><br>
-    Öğren • Geliştir • Paylaş 🚀
+<div id="lessonPage" class="lesson-page">
 
-</footer>
+<div class="lesson-content">
+
+<button class="back" onclick="closeLesson()">
+← Derslere Dön
+</button>
+
+<h1 id="lessonTitle"></h1>
+
+<div id="lessonText"></div>
+
+<button
+id="completeButton"
+class="complete"
+onclick="completeLesson()">
+
+✅ Dersi Tamamla
+
+</button>
+
+</div>
+
+</div>
 
 
 <script>
 
-function startLesson(name) {
+/* DERSLER */
 
-    alert(
-        "📚 " + name +
-        "\\n\\nBu dersin içeriğini bir sonraki aşamada ekleyeceğiz!"
-    );
+const lessons = {
+
+1:{
+title:"🟢 Roblox Studio'ya Başlangıç",
+html:`
+
+<h2>Roblox Studio nedir?</h2>
+
+<p>
+Roblox Studio, Roblox oyunlarını oluşturmak
+için kullanılan geliştirme programıdır.
+</p>
+
+<h2>Explorer</h2>
+
+<p>
+Explorer, oyundaki nesneleri ve servisleri
+görmeni sağlar.
+</p>
+
+<h2>Properties</h2>
+
+<p>
+Properties bölümünden seçtiğin nesnenin
+özelliklerini değiştirebilirsin.
+</p>
+
+<h2>İlk görevin</h2>
+
+<ul>
+<li>Roblox Studio'yu aç.</li>
+<li>Baseplate oluştur.</li>
+<li>Explorer'ı aç.</li>
+<li>Bir Part ekle.</li>
+<li>Properties bölümünden rengini değiştir.</li>
+</ul>
+
+`
+
+},
+
+2:{
+title:"💻 İlk Scriptini Yaz",
+html:`
+
+<h2>Script nedir?</h2>
+
+<p>
+Script, Roblox oyununda davranışları kontrol
+etmek için kullandığımız Lua kodudur.
+</p>
+
+<h2>İlk kodumuz</h2>
+
+<pre id="code2">print("Merhaba Roblox!")</pre>
+
+<button class="copy" onclick="copyText('code2')">
+📋 Kodu Kopyala
+</button>
+
+<h2>Nasıl çalıştırılır?</h2>
+
+<p>
+ServerScriptService içine Script ekle,
+kodu yapıştır ve Play'e bas.
+Sonra View → Output bölümüne bak.
+</p>
+
+`
+
+},
+
+3:{
+title:"📦 Değişkenler",
+html:`
+
+<h2>Değişken nedir?</h2>
+
+<p>
+Değişkenler bilgileri saklamak için kullanılır.
+</p>
+
+<pre id="code3">local para = 100
+
+print(para)</pre>
+
+<button class="copy" onclick="copyText('code3')">
+📋 Kodu Kopyala
+</button>
+
+<h2>Örnek</h2>
+
+<pre id="code3b">local oyuncuAdi = "Roblox Oyuncusu"
+local skor = 10
+
+print(oyuncuAdi)
+print(skor)</pre>
+
+<button class="copy" onclick="copyText('code3b')">
+📋 Kodu Kopyala
+</button>
+
+`
+
+},
+
+4:{
+title:"🖥️ Modern GUI",
+html:`
+
+<h2>GUI nedir?</h2>
+
+<p>
+GUI, oyuncunun ekranda gördüğü buton,
+menü ve yazı gibi arayüzlerdir.
+</p>
+
+<h2>Temel yapı</h2>
+
+<ul>
+<li>StarterGui</li>
+<li>ScreenGui</li>
+<li>Frame</li>
+<li>TextLabel</li>
+<li>TextButton</li>
+</ul>
+
+<h2>Buton kodu</h2>
+
+<pre id="code4">script.Parent.MouseButton1Click:Connect(function()
+
+    print("Butona basıldı!")
+
+end)</pre>
+
+<button class="copy" onclick="copyText('code4')">
+📋 Kodu Kopyala
+</button>
+
+`
+
+},
+
+5:{
+title:"🧱 Build Öğren",
+html:`
+
+<h2>Part nedir?</h2>
+
+<p>
+Part, Roblox'ta yapı oluşturmak için
+kullandığımız temel nesnelerden biridir.
+</p>
+
+<h2>Build ipuçları</h2>
+
+<ul>
+<li>Move ile taşı.</li>
+<li>Scale ile büyüt.</li>
+<li>Rotate ile döndür.</li>
+<li>Material ile görünüş değiştir.</li>
+<li>Anchored ile sabitle.</li>
+</ul>
+
+`
+
+},
+
+6:{
+title:"🚗 Araba Sistemi",
+html:`
+
+<h2>Araba sistemi</h2>
+
+<p>
+Roblox'ta araç oluştururken hazır VehicleSeat
+ve uygun tekerlek sistemleri kullanılabilir.
+</p>
+
+<h2>Temel yapı</h2>
+
+<ul>
+<li>VehicleSeat</li>
+<li>Body</li>
+<li>Wheels</li>
+<li>Constraints</li>
+</ul>
+
+<p>
+Önce basit bir şasi oluştur.
+Daha sonra VehicleSeat ekleyerek
+aracın kontrol sistemini kur.
+</p>
+
+`
+
+},
+
+7:{
+title:"💰 Para Sistemi",
+html:`
+
+<h2>leaderstats oluşturma</h2>
+
+<pre id="code7">game.Players.PlayerAdded:Connect(function(player)
+
+    local leaderstats = Instance.new("Folder")
+    leaderstats.Name = "leaderstats"
+    leaderstats.Parent = player
+
+    local money = Instance.new("IntValue")
+    money.Name = "Money"
+    money.Value = 0
+    money.Parent = leaderstats
+
+end)</pre>
+
+<button class="copy" onclick="copyText('code7')">
+📋 Kodu Kopyala
+</button>
+
+`
+
+},
+
+8:{
+title:"🏆 Leaderboard",
+html:`
+
+<h2>Leaderboard nedir?</h2>
+
+<p>
+Oyuncunun skor, para veya başka değerlerini
+ekranın sağ üst tarafında göstermeye yarar.
+</p>
+
+<h2>Örnek</h2>
+
+<pre id="code8">local score = Instance.new("IntValue")
+
+score.Name = "Score"
+score.Value = 0
+
+score.Parent = leaderstats</pre>
+
+<button class="copy" onclick="copyText('code8')">
+📋 Kodu Kopyala
+</button>
+
+`
+
+},
+
+9:{
+title:"🚩 Checkpoint",
+html:`
+
+<h2>Checkpoint nedir?</h2>
+
+<p>
+Obby oyunlarında oyuncunun ilerlediği noktayı
+kaydetmek için kullanılır.
+</p>
+
+<h2>Temel fikir</h2>
+
+<ul>
+<li>Checkpoint Part oluştur.</li>
+<li>Oyuncu dokunduğunda checkpoint'i kaydet.</li>
+<li>Öldüğünde oyuncuyu son checkpoint'e gönder.</li>
+</ul>
+
+<pre id="code9">local checkpoint = workspace.Checkpoint
+
+checkpoint.Touched:Connect(function(hit)
+
+    local character = hit.Parent
+    local player =
+        game.Players:GetPlayerFromCharacter(character)
+
+    if player then
+        print(player.Name .. " checkpoint aldı!")
+    end
+
+end)</pre>
+
+<button class="copy" onclick="copyText('code9')">
+📋 Kodu Kopyala
+</button>
+
+`
+
+},
+
+10:{
+title:"👾 NPC Sistemi",
+html:`
+
+<h2>NPC nedir?</h2>
+
+<p>
+NPC, oyunda oyuncu olmayan karakterlerdir.
+</p>
+
+<h2>Basit NPC mesajı</h2>
+
+<pre id="code10">print("Merhaba! Ben NPC'yim!")</pre>
+
+<button class="copy" onclick="copyText('code10')">
+📋 Kodu Kopyala
+</button>
+
+<p>
+NPC'lere daha sonra diyalog, takip ve görev
+sistemleri ekleyebilirsin.
+</p>
+
+`
+
+},
+
+11:{
+title:"🛒 Shop GUI",
+html:`
+
+<h2>Shop sistemi</h2>
+
+<p>
+Shop sisteminde oyuncu bir butona basarak
+eşya veya özellik satın alabilir.
+</p>
+
+<h2>Basit fiyat sistemi</h2>
+
+<pre id="code11">local fiyat = 100
+local para = 250
+
+if para >= fiyat then
+
+    para = para - fiyat
+
+    print("Satın alındı!")
+
+else
+
+    print("Yeterli paran yok!")
+
+end</pre>
+
+<button class="copy" onclick="copyText('code11')">
+📋 Kodu Kopyala
+</button>
+
+`
+
+},
+
+12:{
+title:"🎒 Tool Sistemi",
+html:`
+
+<h2>Tool nedir?</h2>
+
+<p>
+Tool, oyuncunun eline alabileceği araçtır.
+Örneğin kılıç, fener veya kazma.
+</p>
+
+<h2>Tool oluşturma</h2>
+
+<ul>
+<li>StarterPack'e gir.</li>
+<li>Tool ekle.</li>
+<li>Tool içine Handle Part ekle.</li>
+<li>Tool'u Play modunda test et.</li>
+</ul>
+
+<h2>Basit kod</h2>
+
+<pre id="code12">script.Parent.Activated:Connect(function()
+
+    print("Tool kullanıldı!")
+
+end)</pre>
+
+<button class="copy" onclick="copyText('code12')">
+📋 Kodu Kopyala
+</button>
+
+`
+
+}
+
+};
+
+
+/* AÇ */
+
+let currentLesson=0;
+
+function openLesson(id){
+
+    currentLesson=id;
+
+    document.getElementById("home").style.display="none";
+
+    document.getElementById("lessonPage").style.display="block";
+
+    document.getElementById("lessonTitle").innerText=
+        lessons[id].title;
+
+    document.getElementById("lessonText").innerHTML=
+        lessons[id].html;
+
+    window.scrollTo(0,0);
 
 }
 
 
-function searchLessons() {
+/* KAPAT */
 
-    let input =
+function closeLesson(){
+
+    document.getElementById("lessonPage").style.display="none";
+
+    document.getElementById("home").style.display="block";
+
+    window.scrollTo(0,0);
+
+}
+
+
+/* TAMAMLANDI */
+
+function completeLesson(){
+
+    let completed=
+        JSON.parse(localStorage.getItem("completedLessons") || "[]");
+
+    if(!completed.includes(currentLesson)){
+
+        completed.push(currentLesson);
+
+        localStorage.setItem(
+            "completedLessons",
+            JSON.stringify(completed)
+        );
+
+    }
+
+    updateProgress();
+
+    alert("🎉 Ders tamamlandı!");
+
+}
+
+
+/* İLERLEME */
+
+function updateProgress(){
+
+    let completed=
+        JSON.parse(localStorage.getItem("completedLessons") || "[]");
+
+    let count=completed.length;
+
+    document.getElementById("progressText").innerText=
+        count+" / 12 ders tamamlandı";
+
+    document.getElementById("progressFill").style.width=
+        ((count/12)*100)+"%";
+
+}
+
+
+/* KOPYALA */
+
+function copyText(id){
+
+    let text=
+        document.getElementById(id).innerText;
+
+    navigator.clipboard.writeText(text);
+
+    alert("✅ Kod kopyalandı!");
+
+}
+
+
+/* ARAMA */
+
+function searchLessons(){
+
+    let value=
         document.getElementById("search")
         .value
         .toLowerCase();
 
-    let lessons =
-        document.querySelectorAll(".lesson");
+    document.querySelectorAll(".lesson")
+    .forEach(function(card){
 
-    lessons.forEach(function(lesson) {
+        let text=
+            card.innerText.toLowerCase();
 
-        let text =
-            lesson.innerText.toLowerCase();
+        if(text.includes(value)){
+            card.style.display="block";
+        }else{
+            card.style.display="none";
+        }
 
-        if (text.includes(input)) {
+    });
 
-            lesson.style.display = "block";
+}
 
-        } else {
 
-            lesson.style.display = "none";
+/* KATEGORİ */
+
+function filterLessons(category){
+
+    document.querySelectorAll(".lesson")
+    .forEach(function(card){
+
+        if(
+            category==="all" ||
+            card.classList.contains(category)
+        ){
+
+            card.style.display="block";
+
+        }else{
+
+            card.style.display="none";
 
         }
 
@@ -464,29 +1281,9 @@ function searchLessons() {
 }
 
 
-function filterLessons(category) {
+/* BAŞLANGIÇ */
 
-    let lessons =
-        document.querySelectorAll(".lesson");
-
-    lessons.forEach(function(lesson) {
-
-        if (
-            category === "all" ||
-            lesson.classList.contains(category)
-        ) {
-
-            lesson.style.display = "block";
-
-        } else {
-
-            lesson.style.display = "none";
-
-        }
-
-    });
-
-}
+updateProgress();
 
 </script>
 
